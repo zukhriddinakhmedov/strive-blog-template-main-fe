@@ -22,7 +22,7 @@ class EditBlogPost extends Component {
                 })
                 console.log(this.state.post)
             }
-        } catch (error) {
+        } catch (err) {
             console.log(err)
         }
     }
@@ -43,7 +43,7 @@ class EditBlogPost extends Component {
                 console.log(" it has been edited successfully")
                 this.props.history.push("/")
             }
-        } catch (error) {
+        } catch (err) {
             console.log(err)
         }
     }

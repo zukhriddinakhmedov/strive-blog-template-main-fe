@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import { Row, Col } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import BlogItem from "../blog-item";
+import "./blog-list.css"
 // import posts from "../../../data/posts.json";
 
 
@@ -12,7 +14,7 @@ export default class BlogList extends Component {
 
   fetchAllPosts = async () => {
     try {
-      let response = await fetch("http://localhost:3002/posts", {
+      let response = await fetch(process.env.REACT_APP_LOCAL_HOST, {
         method: "GET",
       })
       if (response.ok) {
@@ -36,7 +38,9 @@ export default class BlogList extends Component {
         {this.state.posts.length > 0 &&
           this.state.posts.map((post, index) => (
             <Col md={4} style={{ marginBottom: 50 }} key={{ index }}>
-              <BlogItem {...post} />
+              <Link to={`/blogPosts/${post._id}`} className="single-post-link">
+                <BlogItem {...post} />
+              </Link>
             </Col>
           ))}
       </Row>

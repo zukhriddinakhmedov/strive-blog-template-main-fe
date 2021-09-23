@@ -4,16 +4,18 @@ import Footer from "./components/footer";
 import Home from "./views/home";
 import Blog from "./views/blog";
 import NewBlogPost from "./views/new";
+import EditBlogPost from "./views/edit"
 import { BrowserRouter, Route } from "react-router-dom";
 
 const App = () => {
-  
+
   return (
     <BrowserRouter>
       <NavBar />
       <Route path="/" exact component={Home} />
       <Route path="/blog/:id" exact component={Blog} />
-      <Route path="/new" exact component={NewBlogPost}/>
+      <Route path="/blog/edit/:id" exact component={EditBlogPost} />
+      <Route path="/new" exact component={NewBlogPost} />
       <Footer />
     </BrowserRouter>
   );
