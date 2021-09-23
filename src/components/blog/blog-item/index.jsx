@@ -6,8 +6,9 @@ import "./styles.css";
 export default class BlogItem extends Component {
   render() {
     const { title, cover, author, _id } = this.props;
+    console.log(_id)
     return (
-      <Link to={`/blog/${_id}`} className="blog-link">
+      <Link to={`/post/${_id}`} className="blog-link">
         <Card className="blog-card">
           <Card.Img variant="top" src={cover} className="blog-cover" />
           <Card.Body>
